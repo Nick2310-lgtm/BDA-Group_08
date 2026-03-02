@@ -1,81 +1,44 @@
-# Secure Data Orchestration Framework for Continuous ICU Monitoring
+# Secure Data Orchestration for Patient Monitoring
 
-## Overview
+This repository presents the case study implementation of a Secure Data Orchestration framework for continuous ICU monitoring within a Big Data analytics environment.
 
-This repository implements a scalable Big Data orchestration framework
-for ICU patient monitoring using distributed-style processing and machine learning.
-
-The evaluation is based on a structured simulation of the
-MIMIC-III Clinical Database Demo (v1.4).
-
-## Objectives
-
-- Implement ETL-style structured preprocessing
-- Perform threshold-based risk labeling
-- Train Logistic Regression for risk prediction
-- Evaluate Accuracy, Precision, Recall
-- Generate Confusion Matrix and ROC Curve
-- Perform K-Means clustering
-- Measure execution latency
-- Demonstrate computational feasibility for near real-time monitoring
+The implementation evaluates predictive performance and computational feasibility using structured physiological data derived from theMIMIC-III Clinical Database Demo (v1.4).
 
 ---
 
-## Dataset
+## Data Processing
 
-The dataset simulates ICU physiological monitoring attributes:
+The analysis utilizes the `CHARTEVENTS` table to extract the following monitoring attributes:
 
-- Heart Rate
-- Systolic Blood Pressure
-- Diastolic Blood Pressure
-- Oxygen Saturation (SpO2)
+- Heart Rate (ITEMID 211, 220045)
+- Systolic Blood Pressure (ITEMID 220179)
+- Diastolic Blood Pressure (ITEMID 220180)
+- Oxygen Saturation (ITEMID 220277)
 
-Risk Label Definition:
+Preprocessing includes:
 
-Risk = 1 if:
-- Heart Rate > 100
-OR
-- SpO2 < 92
+- Filtering relevant physiological measurements  
+- Aggregating repeated observations per patient using mean values  
+- Handling missing values through mean imputation  
 
-Otherwise Risk = 0
-
----
-
-## Repository Structure
-
-```
-Secure-Data-Orchestration-ICU/
-│
-├── notebooks/
-│   └── ICU_Secure_Data_Orchestration.ipynb
-│
-├── data/
-│   └── processed_monitoring_demo.csv
-│
-├── requirements.txt
-│
-└── README.md
-```
+After preprocessing, 98 unique patient records are retained for analysis.
 
 ---
 
-## Installation
+## Risk Modeling
 
-1. Clone repository:
+A binary monitoring risk indicator is defined using physiological threshold thresholds to simulate anomaly detection in ICU settings.
 
-```
-git clone https://github.com/your-username/Secure-Data-Orchestration-ICU.git
-cd Secure-Data-Orchestration-ICU
-```
+Logistic Regression is applied for risk prediction, and clustering analysis using K-Means (k = 3) supports physiological stratification.
 
-2. Install dependencies:
+---
 
-```
-pip install -r requirements.txt
-```
+## Experimental Design
 
-3. Launch notebook:
+The dataset is partitioned using a 70–30 train-test split. Execution time is measured during model training to assess suitability for near real-time monitoring scenarios.
 
-```
-jupyter notebook notebooks/ICU_Secure_Data_Orchestration.ipynb
-```
+---
+
+## Environment
+
+The analytical workflow reflects a distributed Big Data configuration, integrating Spark-based architectural concepts with Python-based machine learning libraries.
