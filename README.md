@@ -2,7 +2,7 @@
 
 This repository presents the case study implementation of a Secure Data Orchestration framework for continuous ICU monitoring within a Big Data analytics environment.
 
-The implementation evaluates predictive performance and computational feasibility using structured physiological data derived from theMIMIC-III Clinical Database Demo (v1.4).
+The implementation evaluates predictive performance and computational feasibility using structured physiological data derived from the MIMIC-III Clinical Database Demo (v1.4).
 
 ---
 
