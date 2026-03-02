@@ -27,7 +27,7 @@ After preprocessing, 98 unique patient records are retained for analysis.
 
 ## Risk Modeling
 
-A binary monitoring risk indicator is defined using physiological threshold thresholds to simulate anomaly detection in ICU settings.
+A binary monitoring risk indicator is defined using physiological thresholds to simulate anomaly detection in ICU settings.
 
 Logistic Regression is applied for risk prediction, and clustering analysis using K-Means (k = 3) supports physiological stratification.
 
