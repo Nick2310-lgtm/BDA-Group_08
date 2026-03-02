@@ -1,4 +1,4 @@
-# Secure Data Orchestration Framework
+# Secure Data Orchestration Framework for Patient Monitoring
 
 This repository implements the case study evaluation described in Section 5
 of the project report.
