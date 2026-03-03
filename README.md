@@ -43,7 +43,7 @@ Logistic Regression is applied for binary risk prediction, while K-Means cluster
 
 ## Experimental Design
 
-The dataset is partitioned using a 80–20 train-test split. Execution time is measured during model training to assess computational feasibility for near real-time monitoring scenarios.
+The dataset is partitioned using a 70–30 train-test split. Execution time is measured during model training to assess computational feasibility for near real-time monitoring scenarios.
 
 ---
 
